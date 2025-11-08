@@ -4,6 +4,7 @@ import "./assets/style/index.css";
 import DefaultScreen from "./components/DefaultScreen";
 import { fetchWeatherApi } from "openmeteo";
 import { weatherCodesMapping } from "./assets/utils";
+import SearchResult from "./components/SearchResult";
 const App = () => {
   const [dailyForecast, setDailyForecast] = useState(null);
   const [hourlyForecast, setHourlyForecast] = useState(null);
@@ -237,7 +238,7 @@ const App = () => {
           onClickHandler={clickHandler}
         />
       )}
-      {/* {showResultScreen && !dataLoading && (
+      {showResultScreen && !dataLoading && (
         <SearchResult
           currentWeatherData={
             hourlyForecast?.length
@@ -247,7 +248,7 @@ const App = () => {
           dailyForecast={dailyForecast}
           forecastLocation={forecastLocation}
         />
-      )} */}
+      )}
       <p className="copyright-text">&copy; WSA. All Rights Reserved</p>
     </div>
   );
