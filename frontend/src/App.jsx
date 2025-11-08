@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import "./assets/style/index.css";
 import DefaultScreen from "./components/DefaultScreen";
 import { fetchWeatherApi } from "openmeteo";
-
+import { weatherCodesMapping } from "./assets/utils";
 const App = () => {
   const [dailyForecast, setDailyForecast] = useState(null);
   const [hourlyForecast, setHourlyForecast] = useState(null);
